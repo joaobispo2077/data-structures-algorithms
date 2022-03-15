@@ -14,11 +14,15 @@ function binarySearch(list, item) {
 
   if (list[middleIndex] > item) {
     return binarySearch(leftList, item);
-  } else {
+  }
+
+  if (list[middleIndex] < item) {
     return middleIndex + binarySearch(rightList, item);
   }
+
+  return null;
 }
 
 console.time('binarySearch');
-console.log(binarySearch(orderedList, 100));
+console.log(binarySearch(orderedList, 0));
 console.timeEnd('binarySearch');
