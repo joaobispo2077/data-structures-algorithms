@@ -1,15 +1,38 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
+const { Node } = require("./node");
+
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
   }
+
+  get length() {
+    return this.size
+  }
+
+  append(element) {
+    if (this.head) {
+      let pointer = this.head;
+
+      while (pointer.next) {
+        pointer = pointer.next;
+      }
+
+      pointer.next = new Node(element);
+    } else {
+      this.head = new Node(element);
+    }
+
+    this.size++;
+  }
+
 }
 
-const node = new Node(2);
+const linkedList = new LinkedList();
 
-console.log(node);
-
-const node2 = new Node(12);
-node.next = node2;
-
-console.log(node);
+console.info(linkedList);
+linkedList.append(12);
+linkedList.append(1);
+console.info(linkedList);
+console.info(linkedList.length);

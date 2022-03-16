@@ -1,11 +1,18 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+from node import Node
 
 
-node = Node(6)
-node2 = Node(3)
-node.next = node2
-print(node.data)
-print(node.next.data)
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.size
+
+    def append(self, data):
+        if self.head:
+            pointer = self.head
+            while(pointer.next):
+                pointer = pointer.next
+            pointer.next = Node(data)
+        else:
+            self.head = Node(data)
+
+    def __len__(self):

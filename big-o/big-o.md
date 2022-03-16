@@ -1,4 +1,4 @@
-# Big O Notation
+# Big O (asymptotic notation)
 > Constant time beats linear IF data is sufficiently big.
 >
 > Gayle Laakmann McDowell
@@ -72,10 +72,13 @@ function findInList(list, targetElement) {
 
 In geral, you have the situations below:
 - O(1) - Fixed cost.
+- O(log n) - Divide and conquer, process half of the list in each iteration.
 - O(n) - Loop statement with a fixed number of iterations.
-- O(n^2) - Loop statement with a fixed number of iterations and nested loops.
+- O(n log n) - Divide and conquer,break problem in small problems and solve them independently.
+- O(n^2) - Loop statement with a fixed number of iterations and nested loops (2).
+- O(n^3) - Loop statement with a fixed number of iterations and nested loops (3).
+- O(n^4) - Loop statement with a fixed number of iterations and nested loops (4).
 - O(n!) - Loop statement with a fixed number of iterations and nested loops.
-- O(log n) - Divide and conquer.
 
 
 
