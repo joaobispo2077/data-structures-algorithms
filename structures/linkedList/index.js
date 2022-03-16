@@ -17,6 +17,6 @@ console.info(linkedList.search(123));
 linkedList.insert(1, 21);
 linkedList.insert(0, 3);
 console.info(linkedList);
+console.info(JSON.stringify(linkedList, null, 2));
 linkedList.remove(123)
-console.info(linkedList);
 console.info(JSON.stringify(linkedList, null, 2));

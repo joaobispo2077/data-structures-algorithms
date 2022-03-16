@@ -94,19 +94,24 @@ class LinkedList {
   }
 
   remove(element) {
-    this._size--;
+
     if (this.head === null) {
       return null;
     } else if (this.head.data === element) {
       this.head = this.head.next;
+      this._size--;
       return true;
+
     } else {
       let previousPointer = this.head;
       let pointer = this.head.next;
-      while (pointer.next) {
+
+      while (pointer) {
         if (pointer.data === element) {
           previousPointer.next = pointer.next;
           pointer.next = null;
+          this._size--;
+
           return true;
         }
 
