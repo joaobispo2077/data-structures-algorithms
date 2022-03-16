@@ -24,7 +24,42 @@ class LinkedList {
       this.head = new Node(element);
     }
 
-    this.size++;
+    this._size++;
+  }
+
+  get(targetIndex) {
+    let pointer = this._getNode(targetIndex);
+
+    if (pointer) {
+      return pointer.data;
+    } else {
+      return null;
+    }
+  }
+
+  set(targetIndex, element) {
+    let pointer = this._getNode(targetIndex);
+
+    if (pointer) {
+      pointer.data = element;
+      return element;
+    } else {
+      return null;
+    }
+  }
+
+  search(element) {
+    let pointer = this.head;
+
+    while (pointer) {
+      if (pointer.data === element) {
+        return pointer.data;
+      }
+
+      pointer = pointer.next;
+    }
+
+    return null;
   }
 
 }
