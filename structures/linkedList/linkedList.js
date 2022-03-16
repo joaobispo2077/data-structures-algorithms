@@ -1,5 +1,5 @@
+// All methods except get length have a big O: O(n)
 const { Node } = require("./node");
-
 
 class LinkedList {
   constructor() {
