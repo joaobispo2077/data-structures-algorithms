@@ -4,11 +4,29 @@ const { Node } = require("./node");
 class LinkedList {
   constructor() {
     this.head = null;
-    this.size = 0;
+    this._size = 0;
+  }
+
+  _getNode(targetIndex) {
+    let pointer = this.head;
+
+    for (let index = 0; index < targetIndex; index++) {
+      if (pointer) {
+        pointer = pointer.next;
+      } else {
+        return null;
+      }
+    }
+
+    if (pointer) {
+      return pointer;
+    } else {
+      return null;
+    }
   }
 
   get length() {
-    return this.size
+    return this._size
   }
 
   append(element) {
@@ -62,12 +80,43 @@ class LinkedList {
     return null;
   }
 
+  insert(targetIndex, element) {
+    const node = new Node(element);
+    if (targetIndex === 0) {
+      node.next = this.head;
+      this.head = node;
+    } else {
+      const pointer = this._getNode(targetIndex - 1);
+      node.next = pointer.next;
+      pointer.next = node;
+    }
+    this._size++;
+  }
+
+  remove(element) {
+    this._size--;
+    if (this.head === null) {
+      return null;
+    } else if (this.head.data === element) {
+      this.head = this.head.next;
+      return true;
+    } else {
+      let previousPointer = this.head;
+      let pointer = this.head.next;
+      while (pointer.next) {
+        if (pointer.data === element) {
+          previousPointer.next = pointer.next;
+          pointer.next = null;
+          return true;
+        }
+
+        previousPointer = pointer;
+        pointer = pointer.next;
+      }
+      return false;
+    }
+  }
+
 }
 
-const linkedList = new LinkedList();
-
-console.info(linkedList);
-linkedList.append(12);
-linkedList.append(1);
-console.info(linkedList);
-console.info(linkedList.length);
+module.exports = { LinkedList };

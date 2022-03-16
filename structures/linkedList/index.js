@@ -14,3 +14,9 @@ console.info(linkedList.set(1, 123));
 console.info(linkedList);
 console.info(linkedList.length);
 console.info(linkedList.search(123));
+linkedList.insert(1, 21);
+linkedList.insert(0, 3);
+console.info(linkedList);
+linkedList.remove(123)
+console.info(linkedList);
+console.info(JSON.stringify(linkedList, null, 2));
