@@ -1,5 +1,9 @@
+from node import Node
+
+
 class Stack:
     def __init__(self):
+        self.top = None
         self._size = 0
 
     def __len__(self):
@@ -15,3 +19,19 @@ class Stack:
 
     def __str__(self):
         return self.__repr__()
+
+    def push(self, data):
+        node = Node(data)
+        node.next = self.top
+        self.head = node
+        self._size += 1
+
+    def pop(self):
+        if self.top:
+            node = self.top
+            self.top = self.top.next
+            return node.data
+
+    def peek(self):
+        if self.top:
+            return self.top.data
