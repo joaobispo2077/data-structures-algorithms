@@ -1,5 +1,5 @@
-# Stack - LIFO
-- Just perform the operations on the stack
+# Queue - FIFO
+- Just perform the operations on the queue
   - First or last operation
 - Access policy
   - FIFO - First In First Out

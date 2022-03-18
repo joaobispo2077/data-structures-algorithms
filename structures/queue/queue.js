@@ -1,8 +1,10 @@
+// O(n)
 const { Node } = require("./node");
 
 class Queue {
   constructor() {
-    this.top = null;
+    this.first = null;
+    this.last = null;
     this._size = 0;
   }
 
@@ -10,59 +12,70 @@ class Queue {
     return this._size;
   }
 
-  push(value) {
-    const node = new Node(value);
+  push(element) {
+    const node = new Node(element);
 
-    if (this.top === null) {
-      this.top = node;
-      return;
+    if (this.last === null) {
+      this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
     }
 
-    let pointer = this.top;
-    while (pointer.next) {
-      pointer = pointer.next;
+    if (this.first === null) {
+      this.first = node;
     }
-
-    if (pointer) {
-      pointer.next = node;
-    }
-
     this._size++;
   }
 
   pop() {
-    if (this.top) {
-      let previousPointer = this.top;
-      let pointer = this.top.next;
+    if (this._size > 0) {
 
-      while (pointer.next) {
-        previousPointer = pointer;
-        pointer = pointer.next;
+      let element;
+      if (this.first) {
+        element = this.first.data;
+        this.first = this.first.next;
       }
 
-      const node = pointer;
-      previousPointer.next = null;
+      if (this.first === null) {
+        this.last = null;
+      }
+
+
+
       this._size--;
-
-      return node.data;
+      return element;
+    } else {
+      throw new Error("The queue is empty");
     }
-
-    return this.top;
   }
 
   peek() {
-    let pointer = this.top;
+    if (this._size > 0) {
+      const element = this.first.data;
+      this.first = this.first.next;
 
-    if (pointer) {
+      return element;
+    } else {
+      return null;
+    }
+  }
 
-      while (pointer.next) {
+  show() {
+    if (this._size > 0) {
+
+      let queue = "";
+
+      let pointer = this.first;
+
+      while (pointer) {
+        queue += String(pointer.data) + " ";
         pointer = pointer.next;
       }
-
-      return pointer.data;
+      return queue;
+    } else {
+      return "Empty queue";
     }
-
-    return pointer;
   }
 }
 
