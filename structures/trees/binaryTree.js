@@ -14,6 +14,7 @@ class BinaryTree {
     console.log(this.root);
   }
 
+  // in order traversal
   simetricTraversal(treeNode = null) {
     if (treeNode === null) {
       treeNode = this.root;
@@ -32,6 +33,22 @@ class BinaryTree {
     }
 
     process.stdout.write("");
+  }
+
+  postOrderTraversal(treeNode = null) {
+    if (treeNode === null) {
+      treeNode = this.root;
+    }
+
+    if (treeNode.left) {
+      this.postOrderTraversal(treeNode.left);
+    }
+
+    if (treeNode.right) {
+      this.postOrderTraversal(treeNode.right);
+    }
+
+    process.stdout.write(treeNode.data);
   }
 }
 

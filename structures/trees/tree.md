@@ -53,3 +53,13 @@ A binary tree is a tree with some rules:
 - A tree without any biforcation is a called of zig zag tree.
 - The max height that you can get of a n elements in tree is h(n)max = n.
 - The minimun height you can get of a n elements in tree is h(n)min = 1 + log n (base 2).;
+- A traversal is a process of visiting (operate) each node in the tree.
+       - Traversal:
+       - Pre-order: A, B, D, E, H, G, I, C, F
+       - In-order: D, B, E, H, A, G, I, C, F
+       - Post-order: D, E, H, B, I, G, C, F, A
+              - In post order you only visit the root, before you visit the children.
+       - Level-order: A, B, C, D, E, F, G, H, I
+
+
+
