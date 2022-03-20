@@ -1,3 +1,6 @@
+# Binary Tree
+
+## Tree
 Tree is a structure that represents a tree, like this:
 ```md
        A
@@ -19,6 +22,8 @@ In these tree, we have some concepts:
 
 
 --------------------
+
+## Binary Tree
 Binary Tree:
 
 ```md
@@ -33,3 +38,18 @@ Binary Tree:
 
 A binary tree is a tree with some rules:
 - A node can have at most 2 children.
+
+
+--------------------
+
+## Concepts
+- A _path_ is a sequence of nodes from a node to another node.
+- The *size of a path* is the number of nodes in the path.
+       - You can count the path using number of edges that connect the path.
+- *Depth of a path* is the distance from the root.
+       - This distance can be calculated using the number of node or edges in the path.
+- The *height of tree* is the distance between the root and the leaf of maximum depth.
+- You can calculate the height and depth of node using the size between node and most depth descendant leaf.
+- A tree without any biforcation is a called of zig zag tree.
+- The max height that you can get of a n elements in tree is h(n)max = n.
+- The minimun height you can get of a n elements in tree is h(n)min = 1 + log n (base 2).;
