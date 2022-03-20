@@ -28,7 +28,7 @@ Binary Tree:
      / \  / \
     D  E  G  F
     \       /
-      H    I
+     H     I
 ```md
 
 A binary tree is a tree with some rules:
