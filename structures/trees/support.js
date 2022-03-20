@@ -73,6 +73,9 @@ const runPostOrderTraversal = () => {
   tree.root = n0;
 
   tree.postOrderTraversal();
+  console.log("\nTree height:", tree.getHeight());
+  console.log("\nNode 5 height:", tree.getHeight(n5));
 }
+
 console.log("\nPercurso em pós ordem:");
 runPostOrderTraversal();
