@@ -152,6 +152,30 @@ class BinarySearchTree extends BinaryTree {
       return this.search(data, node.right);
     }
   }
+
+  getMinimumValue(treeNode = DEFAULT_NODE) {
+    if (treeNode === DEFAULT_NODE) {
+      treeNode = this.root;
+    }
+
+    while (treeNode.left) {
+      treeNode = treeNode.left;
+    }
+
+    return treeNode.data;
+  }
+
+  getMaximumValue(treeNode = DEFAULT_NODE) {
+    if (treeNode === DEFAULT_NODE) {
+      treeNode = this.root;
+    }
+
+    while (treeNode.right) {
+      treeNode = treeNode.right;
+    }
+
+    return treeNode.data;
+  }
 }
 
 module.exports = { BinarySearchTree };

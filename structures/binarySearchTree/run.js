@@ -11,6 +11,9 @@ const binarySearchTree = new BinarySearchTree();
 
 binarySearchTree.inOrderTraversal();
 binarySearchTree.levelOrderTraversal();
+console.info('\n----')
+console.info(binarySearchTree.getMinimumValue());
+console.info(binarySearchTree.getMaximumValue());
 // const foudNode = binarySearchTree.search(99);
 
 // console.log(foudNode);
