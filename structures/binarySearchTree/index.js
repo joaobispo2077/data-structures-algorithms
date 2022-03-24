@@ -1,4 +1,6 @@
+const { Queue } = require("./queue");
 
+const DEFAULT_NODE = "DEFAULT_NODE";
 class Node {
   constructor(data) {
     this.data = data;
@@ -53,6 +55,33 @@ class BinaryTree {
     }
 
     process.stdout.write(treeNode.data);
+  }
+
+  levelOrderTraversal(treeNode = DEFAULT_NODE) {
+    if (treeNode === DEFAULT_NODE) {
+      treeNode = this.root;
+    }
+
+    const queue = new Queue();
+    queue.enqueue(treeNode);
+
+    while (queue.length > 0) {
+      const node = queue.dequeue();
+
+      if (node.left) {
+        queue.enqueue(node.left);
+      }
+
+      if (node.right) {
+        queue.enqueue(node.right);
+      }
+
+      if (node.data) {
+        process.stdout.write(` ${node.data} `);
+      }
+    }
+
+
   }
 
   getHeight(treeNode = null) {

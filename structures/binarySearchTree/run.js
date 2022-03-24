@@ -6,13 +6,12 @@ console.log(randomNumberList);
 
 const binarySearchTree = new BinarySearchTree();
 
-[
-  99, 78, 21, 71, 48,
-  30, 66, 1, 13, 65
-].forEach((randomNumber) => binarySearchTree.insert(randomNumber));
+[61, 89, 66, 43, 51, 16, 55, 11, 79, 77, 82, 32]
+  .forEach((randomNumber) => binarySearchTree.insert(randomNumber));
 
 binarySearchTree.inOrderTraversal();
-const foudNode = binarySearchTree.search(99);
+binarySearchTree.levelOrderTraversal();
+// const foudNode = binarySearchTree.search(99);
 
-console.log(foudNode);
+// console.log(foudNode);
 
