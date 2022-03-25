@@ -18,3 +18,35 @@ console.info(binarySearchTree.getMaximumValue());
 
 // console.log(foudNode);
 
+function runRemoveNode() {
+
+  const BST = new BinarySearchTree();
+  [61, 89, 66, 43, 51, 16, 55, 11, 79, 77, 82, 32, 100, 90].forEach((randomNumber) => BST.insert(randomNumber));
+
+  console.log("\nshowing before remove.\n")
+  BST.inOrderTraversal();
+  BST.remove(61);
+  console.log("\nshowing after remove.\n")
+  BST.inOrderTraversal();
+
+  console.log("\nshowing before remove.\n")
+  BST.inOrderTraversal();
+  BST.remove(11);
+  console.log("\nshowing after remove.\n")
+  BST.inOrderTraversal();
+
+  console.log("\nshowing before remove.\n")
+  BST.inOrderTraversal();
+  BST.remove(100);
+  console.log("\nshowing after remove.\n")
+  BST.inOrderTraversal();
+
+  console.log("\nshowing before remove.\n")
+  BST.inOrderTraversal();
+  BST.remove(89);
+  console.log("\nshowing after remove.\n")
+  BST.inOrderTraversal();
+
+}
+
+runRemoveNode();

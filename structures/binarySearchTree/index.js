@@ -77,6 +77,34 @@ class BinarySearchTree extends BinaryTree {
 
     return treeNode.data;
   }
+
+  remove(data, treeNode = DEFAULT_NODE) {
+    if (treeNode === DEFAULT_NODE) {
+      treeNode = this.root;
+    }
+
+    if (treeNode === null) {
+      return treeNode;
+    }
+
+    if (data < treeNode.data) {
+      treeNode.left = this.remove(data, treeNode.left);
+    } else if (data > treeNode.data) {
+      treeNode.right = this.remove(data, treeNode.right);
+    } else {
+      if (treeNode.left === null) {
+        return treeNode.right;
+      } else if (treeNode.right === null) {
+        return treeNode.left;
+      } else {
+        const substituteNode = this.getMinimumValue(treeNode.right);
+        treeNode.data = substituteNode;
+        treeNode.right = this.remove(substituteNode, treeNode.right);
+      }
+    }
+
+    return treeNode;
+  }
 }
 
 module.exports = { BinarySearchTree };

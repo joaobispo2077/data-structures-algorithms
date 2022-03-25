@@ -1,5 +1,5 @@
 const { Queue } = require("./queue");
-
+const DEFAULT_NODE = "DEFAULT_NODE";
 class BinaryTree {
   constructor(data = null) {
     if (data) {
@@ -24,7 +24,7 @@ class BinaryTree {
       this.inOrderTraversal(treeNode.left);
     }
 
-    console.log(treeNode.data);
+    process.stdout.write(` ${treeNode.data} `);
 
     if (treeNode.right) {
       this.inOrderTraversal(treeNode.right);
