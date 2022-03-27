@@ -23,12 +23,18 @@ function fibonnaciWithMemoization(number, memo) {
 // O(N)
 
 function fibonnaciBottomUp(number) {
-  let memo = [null, null, 1, 1];
-  for (let i = 3; i <= number; i++) {
-    memo[i] = memo[i - 1] + memo[i - 2];
+  if (number < 2) {
+    return 1;
   }
 
-  return memo[number];
+  let bottomUp = new Array(number + 1);
+  bottomUp[1] = 1;
+  bottomUp[2] = 1;
+
+  for (let i = 3; i <= number + 1; i++) {
+    bottomUp[i] = bottomUp[i - 1] + bottomUp[i - 2];
+  }
+  return bottomUp[number];
 }
 
 console.time('fibonnaci');
@@ -36,9 +42,9 @@ console.log(fibonnaci(5));
 console.timeEnd('fibonnaci');
 
 console.time('fibonnaciWithMemoization');
-console.log(fibonnaciWithMemoization(5, []));
+console.log(fibonnaciWithMemoization(5, [null, null, null, null]));
 console.timeEnd('fibonnaciWithMemoization');
 
 console.time('fibonnaciBottomUp');
-console.log(fibonnaciBottomUp(5));
+console.log(fibonnaciBottomUp(35));
 console.timeEnd('fibonnaciBottomUp');
