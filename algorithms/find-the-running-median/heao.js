@@ -1,0 +1,3 @@
+function findRunningMedian(list) {
+
+}
