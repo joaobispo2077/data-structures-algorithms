@@ -6,7 +6,6 @@
 #  2. INTEGER_ARRAY queries
 #
 from collections import deque
-import os
 import sys
 sys.setrecursionlimit(10000)
 
